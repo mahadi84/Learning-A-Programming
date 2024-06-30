@@ -1,7 +1,6 @@
 Date: 30-june-2024
 
 
-
 01. BACKEND (Database and It's connection): 
     MySQL/Oracle, Table(row,col), username and password, Relationship
 02. FRONTEND:
@@ -10,8 +9,10 @@ Date: 30-june-2024
     PHP, JAVA, ASPX, Python, Solidity, Smiplicity, CX, C++, 
     (Data Type,Variable, Global Variable, Visibility(Public, Private, External, Internal), Validaiton & Authentication<User, Form-Data> Class, Function)
  
+=============What a software does for us ======================
 
-
-
+>>Service(Automation) | ATM, PI,CBS
+>>API(RIA, PRABHU)
+>>Data Analysis (Data Science)
 
 ===================
