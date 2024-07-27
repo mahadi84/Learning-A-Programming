@@ -1,16 +1,15 @@
 
 
-01. Class and Interface
+01. Class, Interface, Traits
 02. Object
 03. Property
 04. Method(Constructor & Deconstructor)
 05. Access Modifiers
 06. 'this' keyword
-07. Trait 
-08. 
+--
 
-09. Data Abstraction (Data hide)Abstract Class 
-10. Inheritance(Reusability)
-11. Encapsulation(Data hide)
-12. Polymorphism(Object to take many forms)
+01. Data Abstraction (Data hide)Abstract Class 
+02. Inheritance(Reusability)
+03. Encapsulation(Data hide)
+04. Polymorphism(Object to take many forms)
 
