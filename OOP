@@ -62,40 +62,77 @@ Inheritance promotes code reusability and can lead to a hierarchical classificat
 
 Example:
 Bank Account: Let's consider a real-world example of a bank account. We'll encapsulate the account balance and provide methods to interact with the balance.
-// BankAccount.java
 public class BankAccount {
-    // Private fields for encapsulation
+    // Private fields to store account information
     private String accountNumber;
+    private String accountHolderName;
     private double balance;
 
-    // Constructor to initialize the bank account
-    public BankAccount(String accountNumber, double initialBalance) {
+    // Constructor to initialize the account
+    public BankAccount(String accountNumber, String accountHolderName, double initialBalance) {
         this.accountNumber = accountNumber;
+        this.accountHolderName = accountHolderName;
         this.balance = initialBalance;
     }
 
-    // Public method to deposit money
+    // Getter method for account number
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    // Getter method for account holder name
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
+
+    // Getter method for balance
+    public double getBalance() {
+        return balance;
+    }
+
+    // Method to deposit money
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
             System.out.println("Deposited: " + amount);
         } else {
-            System.out.println("Deposit amount must be positive");
+            System.out.println("Invalid deposit amount");
+        }
+    }
+
+    // Method to withdraw money
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Invalid withdrawal amount or insufficient balance");
         }
     }
 }
+
 ------------
 // Main.java
 public class Main {
     public static void main(String[] args) {
-        // Create a new bank account
-        BankAccount account = new BankAccount("123456789", 1000.00);
+        // Creating a new bank account
+        BankAccount account = new BankAccount("123456789", "John Doe", 1000.0);
 
-        // Deposit money
-        account.deposit(500.00);
-        System.out.println("Current balance: " + account.getBalance());
+        // Displaying initial balance
+        System.out.println("Account Holder: " + account.getAccountHolderName());
+        System.out.println("Account Number: " + account.getAccountNumber());
+        System.out.println("Initial Balance: " + account.getBalance());
 
+        // Depositing money
+        account.deposit(500.0);
+        System.out.println("Balance after deposit: " + account.getBalance());
+
+        // Withdrawing money
+        account.withdraw(200.0);
+        System.out.println("Balance after withdrawal: " + account.getBalance());
+    }
 }
+
 
 
 ============================ 04. Polymorphism(Object to take many forms) ==============================
