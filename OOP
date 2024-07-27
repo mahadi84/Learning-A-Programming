@@ -1,15 +1,99 @@
 
+OOP
 
+
+01. Data Abstraction (Data hide) 
+02. Inheritance(Reusability)
+03. Encapsulation(hiding data and complexity)
+04. Polymorphism(Object to take many forms)
+
+===========
 01. Class, Abstract Class, Interface, Traits
 02. Object
 03. Property
 04. Method(Constructor & Deconstructor)
 05. Access Modifiers
 06. 'this' keyword
---
 
-01. Data Abstraction (Data hide) 
-02. Inheritance(Reusability)
-03. Encapsulation(hiding data and complexity)
-04. Polymorphism(Object to take many forms)
+
+================= 01. Data Abstraction (Data hide) =============================
+
+-hide the complex implementation details and show only the essential features of an object to a developer
+-focus on what the object does rather than how it does it.
+-allows developers to build systems that are easier to manage, understand, and maintain.
+
+Example:
+public abstract class Car {
+    public abstract void Engine();
+    public abstract void brake();
+}
+
+public class Sedan extends Car {
+    @Override
+    public void Engine() {
+        // Complex logic to start a sedan engine
+    }
+
+    @Override
+    public void brake() {
+        // Complex logic to brake a sedan
+    }
+}
+
+Explanation: 
+The Sedan class provides specific implementations for these methods. 
+The details of how each method works are hidden from the user of the Sedan class, providing a simplified and abstracted view.
+
+
+============================ 02. Inheritance(Code Reusability, Method Overriding, Extended Functionality )==================================
+Inheritance is a fundamental concept in Object-Oriented Programming (OOP) that allows a new class to inherit properties and behavior (methods) from an existing class. 
+The new class called a subclass (or derived class), inherits the fields and methods of the superclass (or base class). 
+Inheritance promotes code reusability and can lead to a hierarchical classification.
+
+============================ 03. Encapsulation(hiding data and complexity) ============================
+-bundling the data (fields) and methods (functions) into a single unit or class and restricting access to some of the object's components. 
+-using access modifiers such as private, protected, and public. 
+
+Example:
+Bank Account: Let's consider a real-world example of a bank account. We'll encapsulate the account balance and provide methods to interact with the balance.
+// BankAccount.java
+public class BankAccount {
+    // Private fields for encapsulation
+    private String accountNumber;
+    private double balance;
+
+    // Constructor to initialize the bank account
+    public BankAccount(String accountNumber, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.balance = initialBalance;
+    }
+
+    // Public method to deposit money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount);
+        } else {
+            System.out.println("Deposit amount must be positive");
+        }
+    }
+}
+------------
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        // Create a new bank account
+        BankAccount account = new BankAccount("123456789", 1000.00);
+
+        // Deposit money
+        account.deposit(500.00);
+        System.out.println("Current balance: " + account.getBalance());
+
+}
+
+
+============================ 04. Polymorphism(Object to take many forms) ==============================
+
+
+
 
