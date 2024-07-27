@@ -7,13 +7,12 @@ OOP
 03. Encapsulation(hiding data and complexity)
 04. Polymorphism(Object to take many forms)
 
-===========
-01. Class, Abstract Class, Interface, Traits
-02. Object
-03. Property
-04. Method(Constructor & Deconstructor)
-05. Access Modifiers
-06. 'this' keyword
+================================
+A. Class and Object 
+B. Abstract Class, Interface, Traits
+C. Property and Method(Constructor, Deconstructor, Abstract) 
+D. Access Modifiers
+E. 'this' keyword
 
 
 ================= 01. Data Abstraction (Data hide) =============================
@@ -50,9 +49,11 @@ Inheritance is a fundamental concept in Object-Oriented Programming (OOP) that a
 The new class called a subclass (or derived class), inherits the fields and methods of the superclass (or base class). 
 Inheritance promotes code reusability and can lead to a hierarchical classification.
 
-============================ 03. Encapsulation(hiding data and complexity) ============================
+
+============================ 03. Encapsulation(hiding data, access control and complexity) ============================
 -bundling the data (fields) and methods (functions) into a single unit or class and restricting access to some of the object's components. 
--using access modifiers such as private, protected, and public. 
+-using access modifiers such as private, protected, and public.
+-Getter and setter methods.
 
 Example:
 Bank Account: Let's consider a real-world example of a bank account. We'll encapsulate the account balance and provide methods to interact with the balance.
@@ -93,7 +94,47 @@ public class Main {
 
 
 ============================ 04. Polymorphism(Object to take many forms) ==============================
+-allows objects of different classes to be treated as objects of a common superclass. 
+-way to perform a single action in different forms, enabling flexibility and the ability to extend code with minimal changes.
 
+There are two primary types of polymorphism:
+1. Static/Compile-time Polymorphism (Overloading):
+        -Different methods with the same name but different parameters
+        
+        Example in Java:
+        class Calculator {
+            public int add(int a, int b) {
+                return a + b;
+            }
+        
+            public double add(double a, double b) {
+                return a + b;
+            }
+        }
 
+2. Dynamic/Runtime Polymorphism (Overriding)
+    -Achieved through method overriding
+    -A subclass provides a specific implementation of a method inherited from a superclass
+    
+    Example in Java:
+    Java
+    class Animal {
+        public void makeSound() {
+            System.out.println("Animal makes a sound");
+        }
+    }
+    
+    class Dog extends Animal {
+        @Override
+        public void makeSound() {
+            System.out.println("Dog barks");   
+    
+        }
+    }
 
+===========================================================================
+-------------------------------Others -------------------------------------
+===========================================================================
+
+--------------------------- Class and Object------------------------------
 
