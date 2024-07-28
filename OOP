@@ -17,8 +17,8 @@ E. 'this' keyword
 
 ================= 01. Data Abstraction (Data hide) =============================
 
--hide the complex implementation details and show only the essential features of an object to a developer
 -focus on what the object does rather than how it does it.
+-hide the complex implementation details and show only the essential features of an object to a developer
 -allows developers to build systems that are easier to manage, understand, and maintain.
 
 Example:
