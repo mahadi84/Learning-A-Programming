@@ -191,70 +191,100 @@ Object
 
 
 --------------------------- B. 1>Abstract Class Vs Interface, 2>Traits ---------------------------------------------
-Abstract Class: 
-An abstract class can have both abstract methods (without implementation) and concrete methods (with implementation). It can also have member variables and constructors.
+ABSTRACT CLASS:-- 
+    -Can have both abstract and non-abstract(concrete) methods
+    -can also have member variables and constructors.
+    -does not support multiple inheritance.
+    -It extends
 
-Example:
-abstract class Animal {
-    String name;
-    Animal(String name) {
-        this.name = name;
-    }
-    // Abstract method (no implementation)
-    abstract void makeSound();
-    // Concrete method
-    void sleep() {
-        System.out.println(name + " is sleeping.");
-    }
-}
+            Example:
+            abstract class Animal {
+                String name;
+                Animal(String name) {
+                    this.name = name;
+                }
+                // Abstract method (no implementation)
+                abstract void makeSound();
+                // Concrete method
+                void sleep() {
+                    System.out.println(name + " is sleeping.");
+                }
+            }
+            
+            class Dog extends Animal {
+                Dog(String name) {
+                    super(name);
+                }
+                @Override
+                void makeSound() {
+                    System.out.println(name + " says: Woof Woof");
+                }
+            }
+            
+            public class Main {
+                public static void main(String[] args) {
+                    Dog dog = new Dog("Buddy");
+                    dog.makeSound();
+                    dog.sleep();
+                }
+            }
 
-class Dog extends Animal {
-    Dog(String name) {
-        super(name);
-    }
-    @Override
-    void makeSound() {
-        System.out.println(name + " says: Woof Woof");
-    }
-}
+INTERFACE:--
+    -can only have abstract methods (until Java 8, which introduced default and static methods).
+    -All methods in an interface are implicitly public and abstract. 
+    -Interfaces cannot have constructors or member variables (except static final constants).
+    -Support multiple inheritance.
+    -It implements
 
-public class Main {
-    public static void main(String[] args) {
-        Dog dog = new Dog("Buddy");
-        dog.makeSound();
-        dog.sleep();
-    }
-}
+        Example:
+        interface youtubeChannel {
+            // Abstract method            
+            void makeVideo();
+            // Default method (introduced in Java 8)
+            default void sleep() {
+                System.out.println("Animal is sleeping.");
+            }
+        }
+        
+        class TV implements youtubeChannel {
+            @Override
+            public void makeVideo() {
+                System.out.println("Tutorial Video");
+            }
+        }
 
-INTERFACE:
-An interface can only have abstract methods (until Java 8, which introduced default and static methods).
-All methods in an interface are implicitly public and abstract. 
-Interfaces cannot have constructors or member variables (except static final constants).
+        class peaceTv implements youtubeChannel {
+            @Override
+            public void makeVideo() {
+                System.out.println("Islamic Video");
+            }
+        }
 
-Example:
-interface Animal {
-    // Abstract method
-    void makeSound();
-    // Default method (introduced in Java 8)
-    default void sleep() {
-        System.out.println("Animal is sleeping.");
-    }
-}
+        class jamunaTv implements youtubeChannel {
+            @Override
+            public void makeVideo() {
+                System.out.println("News Video");
+            }
+        }
+        
+        public class Main {
+            public static void main(String[] args) {
+                Tv tv = new Tv();
+                tv.makeVideo();
 
-class Dog implements Animal {
-    @Override
-    public void makeSound() {
-        System.out.println("Dog says: Woof Woof");
-    }
-}
+                peaceTv peace = new peaceTv();
+                peace.makeVideo();
 
-public class Main {
-    public static void main(String[] args) {
-        Dog dog = new Dog();
-        dog.makeSound();
-        dog.sleep();
-    }
-}
+                jamunaTv jamuna = new jamunaTv();
+                jamuna.makeVideo();
+
+                //$data = array(tv,peace,jamuna);
+                foreach($data as $value){
+                echo $value->makeVideo()."<br>";
+                }
+
+            }
+        }
 
 Traits:
  -you can achieve similar functionality using interfaces with default methods, introduced in Java 8. 
