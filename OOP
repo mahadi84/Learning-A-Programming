@@ -1,11 +1,11 @@
-
-OOP
+Date: 28-July-2024
 
 
 01. Data Abstraction (Data hide) 
-02. Inheritance(Reusability)
+02. Inheritance(Code Reusability, Method Overriding, Extended Functionality )
 03. Encapsulation(hiding data and complexity)
 04. Polymorphism(Object to take many forms)
+
 
 ================================
 A. Class and Object 
