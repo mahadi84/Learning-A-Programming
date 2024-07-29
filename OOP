@@ -16,36 +16,97 @@ E. 'this' keyword
 
 
 ================= 01. Data Abstraction (Data hide) =============================
-
+WHAT?
+-breaking down a program into smaller pieces or modules. 
 -focus on what the object does rather than how it does it.
--hide the complex implementation details and show only the essential features of an object to a developer
--allows developers to build systems that are easier to manage, understand, and maintain.
+-hiding the internal implementation details, showing only the essential features of an object to a developer
+
+WHY?
+The program is easier to develop, manage, test, and debug independently
+
 
 Example:
-abstract class Animal {
-    // Abstract method (no implementation)
-    public abstract void makeSound();
 
-    // Concrete method
-    public void sleep() {
-        System.out.println("Sleeping...");
-    }
+// Interface for bank account operations
+interface BankAccount {
+    void deposit(double amount);
+    void withdraw(double amount);
+    double getBalance();
 }
 
-class Dog extends Animal {
+// Abstract class representing a generic bank account
+abstract class AbstractBankAccount implements BankAccount {
+    protected double balance;
+
+    public AbstractBankAccount(double initialBalance) {
+        this.balance = initialBalance;
+    }
+
     @Override
-    public void makeSound() {
-        System.out.println("Woof Woof");
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    @Override
+    public double getBalance() {
+        return balance;
     }
 }
 
+// Concrete class representing a savings account
+class SavingsAccount extends AbstractBankAccount {
+    private double interestRate;
+
+    public SavingsAccount(double initialBalance, double interestRate) {
+        super(initialBalance);
+        this.interestRate = interestRate;
+    }
+
+    public void addInterest() {
+        balance += balance * interestRate;
+    }
+
+    @Override
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+        }
+    }
+}
+
+// Concrete class representing a checking account
+class CheckingAccount extends AbstractBankAccount {
+    private double overdraftLimit;
+
+    public CheckingAccount(double initialBalance, double overdraftLimit) {
+        super(initialBalance);
+        this.overdraftLimit = overdraftLimit;
+    }
+
+    @Override
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance + overdraftLimit) {
+            balance -= amount;
+        }
+    }
+}
+// Main Function
 public class Main {
     public static void main(String[] args) {
-        Dog dog = new Dog();
-        dog.makeSound();
-        dog.sleep();
+        SavingsAccount savings = new SavingsAccount(1000, 0.05);
+        CheckingAccount checking = new CheckingAccount(500, 200);
+
+        savings.deposit(200);
+        savings.addInterest();
+        System.out.println("Savings Account Balance: " + savings.getBalance());
+
+        checking.withdraw(600);
+        System.out.println("Checking Account Balance: " + checking.getBalance());
     }
 }
+
 
 
 
