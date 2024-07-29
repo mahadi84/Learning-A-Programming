@@ -2,7 +2,7 @@
 Date: 28-July-2024
 
 
-    --WHAT AND WHY?--
+    --WHAT,WHY and HOW?--
 01. Data Abstraction (hiding data and complexity) 
 02. Inheritance(Code Reusability, Method Overriding, Extended Functionality )
 03. Encapsulation(bundling data and methods)
@@ -26,7 +26,7 @@ WHAT?
 WHY?
 The program/module is easier to develop, manage, test, and debug independently.
 
-
+HOW?
 Example:
 
 // Interface for bank account operations
@@ -120,6 +120,8 @@ WHY?
 -to reuse the code of an existing class (parent class)
 -to extend the functionality like ADD new features or OVERRIDE existing ones in the child class without modifying the parent class
 
+HOW?
+
 ============================ 03. Encapsulation(hiding data, access control and complexity) ============================
 WHAT?
 -bundling the data (fields) and methods (functions) into a single unit or class
@@ -212,6 +214,7 @@ WHY?
 -ability to extend code with minimal changes.
 -code reusability.
 
+HOW?
 There are two primary types of polymorphism:
 1. Static/Compile-time Polymorphism (Overloading):
         -Different methods with the same name but different parameters
