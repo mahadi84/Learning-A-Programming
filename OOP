@@ -110,14 +110,20 @@ public class Main {
 
 
 
-============================ 02. Inheritance(Code Reusability, Method Overriding, Extended Functionality )==================================
-Inheritance is a fundamental concept in Object-Oriented Programming (OOP) that allows a new class to inherit properties and behavior (methods) from an existing class. 
-The new class called a subclass (or derived class), inherits the fields and methods of the superclass (or base class). 
-Inheritance promotes code reusability and can lead to a hierarchical classification.
+============================ 02. Inheritance(Code Reusability, Extended Functionality)==================================
+WHAT:
+-allows a new (subclass or derived) class to inherit fields (properties) and methods (behavior) from an existing(superclass or base) class. 
 
+WHY?
+-to reuse the code of an existing class (parent class)
+-to extend the functionality like ADD new features or OVERRIDE existing ones in the child class without modifying the parent class
 
 ============================ 03. Encapsulation(hiding data, access control and complexity) ============================
--bundling the data (fields) and methods (functions) into a single unit or class and restricting access to some of the object's components. 
+WHAT?
+-bundling the data (fields) and methods (functions) into a single unit or class
+WHY?
+-restricting access to some of the object's components. 
+HOW?
 -using access modifiers such as private, protected, and public.
 -Getter and setter methods.
 
@@ -198,6 +204,7 @@ public class Main {
 
 ============================ 04. Polymorphism(Object to take many forms) ==============================
 -allows objects of different classes to be treated as objects of a common superclass. 
+-allows objects of different classes to be treated as objects of a common parent class, enabling a single interface to represent different underlying forms (data types)
 -way to perform a single action in different forms, enabling flexibility and the ability to extend code with minimal changes.
 
 There are two primary types of polymorphism:
@@ -220,20 +227,36 @@ There are two primary types of polymorphism:
     -A subclass provides a specific implementation of a method inherited from a superclass
     
     Example in Java:
-    Java
-    class Animal {
-        public void makeSound() {
-            System.out.println("Animal makes a sound");
-        }
-    }
-    
-    class Dog extends Animal {
-        @Override
-        public void makeSound() {
-            System.out.println("Dog barks");   
-    
-        }
-    }
+            // Interface
+            interface Animal {
+            void makeSound();
+            }
+            
+            // Class implementing the interface
+            class Dog implements Animal {
+            public void makeSound() {
+                System.out.println("Woof");
+            }
+            }
+            
+            // Another class implementing the interface
+            class Cat implements Animal {
+            public void makeSound() {
+                System.out.println("Meow");
+            }
+            }
+            
+            public class Main {
+            public static void main(String[] args) {
+                Animal myDog = new Dog();
+                Animal myCat = new Cat();
+            
+                myDog.makeSound(); // Outputs: Woof
+                myCat.makeSound(); // Outputs: Meow
+            }
+            }
+
+***ALSO Bank example of  01. Data Abstraction (Data hide)
 
 ===========================================================================
 -------------------------------Others -------------------------------------
