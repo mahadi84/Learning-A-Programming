@@ -22,7 +22,7 @@ WHAT?
 -breaking down a program into smaller pieces or modules. 
 
 WHY?
-The program is easier to develop, manage, test, and debug independently
+The program/module is easier to develop, manage, test, and debug independently.
 
 
 Example:
