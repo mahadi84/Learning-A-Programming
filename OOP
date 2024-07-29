@@ -1,4 +1,6 @@
+
 Date: 28-July-2024
+
 
     --WHAT AND WHY?--
 01. Data Abstraction (hiding data and complexity) 
@@ -379,36 +381,36 @@ Traits are essentially a way to share methods between classes without using inhe
 They provide a set of methods that can be used by any class that includes the trait. 
 This is particularly useful for adding common functionality to classes that are not related by inheritance.
 
-interface Flyable {
-    default void fly() {
-        System.out.println("Flying...");
-    }
-}
-
-interface Swimmable {
-    default void swim() {
-        System.out.println("Swimming...");
-    }
-}
-
-class Duck implements Flyable, Swimmable {
-    // Duck can fly and swim
-}
-
-class Fish implements Swimmable {
-    // Fish can only swim
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Duck duck = new Duck();
-        duck.fly();
-        duck.swim();
-
-        Fish fish = new Fish();
-        fish.swim();
-    }
-}
+        interface Flyable {
+            default void fly() {
+                System.out.println("Flying...");
+            }
+        }
+        
+        interface Swimmable {
+            default void swim() {
+                System.out.println("Swimming...");
+            }
+        }
+        
+        class Duck implements Flyable, Swimmable {
+            // Duck can fly and swim
+        }
+        
+        class Fish implements Swimmable {
+            // Fish can only swim
+        }
+        
+        public class Main {
+            public static void main(String[] args) {
+                Duck duck = new Duck();
+                duck.fly();
+                duck.swim();
+        
+                Fish fish = new Fish();
+                fish.swim();
+            }
+        }
 
 
 
@@ -418,26 +420,26 @@ Abstract Method: Declared without implementation in an abstract class; subclasse
 Destructor (Finalizer): Java does not have destructors like C++. Instead, it has a finalize() method called by the garbage collector, but its use is discouraged due to unpredictability and performance issues..
 Constructor: A special method with Class name. is called when an object is instantiated. It is used to initialize the object’s properties.
     Example:
-    public class Car {
-        private String model;
-        private int year;
-    
-        // Constructor
-        public Car(String model, int year) {
-            this.model = model;
-            this.year = year;
-        }
-    
-        // Method to display car details
-        public void displayDetails() {
-            System.out.println("Model: " + model + ", Year: " + year);
-        }
-    
-        public static void main(String[] args) {
-            Car car = new Car("Toyota", 2020);
-            car.displayDetails();
-        }
-    }
+            public class Car {
+                private String model;
+                private int year;
+            
+                // Constructor
+                public Car(String model, int year) {
+                    this.model = model;
+                    this.year = year;
+                }
+            
+                // Method to display car details
+                public void displayDetails() {
+                    System.out.println("Model: " + model + ", Year: " + year);
+                }
+            
+                public static void main(String[] args) {
+                    Car car = new Car("Toyota", 2020);
+                    car.displayDetails();
+                }
+            }
 
 
 --------------------------- D. Access Modifiers --------------------------------------------------------------
@@ -454,3 +456,8 @@ Default: Accessible only within the same package.
 -It can be used for constructor chaining, returning the current object, and passing the current object as a parameter.
 -The this keyword is a powerful tool in Java that helps manage object references and ensures clarity in your code
 
+
+
+
+
+-
