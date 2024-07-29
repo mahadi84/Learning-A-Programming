@@ -19,12 +19,12 @@ E. 'this' keyword
 
 ================= 01. Data Abstraction (Data hide) =============================
 WHAT?
--hiding the internal implementation details, showing only the essential features of an object to a developer
--focus on what the object does rather than how it does it.
--breaking down a program into smaller pieces or modules. 
+    -hiding the internal implementation details, showing only the essential features of an object to a developer
+    -focus on what the object does rather than how it does it.
+    -breaking down a program into smaller pieces or modules. 
 
 WHY?
-The program/module is easier to develop, manage, test, and debug independently.
+    -The program/module is easier to develop, manage, test, and debug independently.
 
 HOW?
 Example:
@@ -124,63 +124,63 @@ HOW?
 
 ============================ 03. Encapsulation(hiding data, access control and complexity) ============================
 WHAT?
--bundling the data (fields) and methods (functions) into a single unit or class
+    -bundling the data (fields) and methods (functions) into a single unit or class
 WHY?
--restricting access to some of the object's components. 
+    -restricting access to some of the object's components. 
 HOW?
--using access modifiers such as private, protected, and public.
--Getter and setter methods.
+    -using access modifiers such as private, protected, and public.
+    -Getter and setter methods.
 
 Example:
-Bank Account: Let's consider a real-world example of a bank account. We'll encapsulate the account balance and provide methods to interact with the balance.
-public class BankAccount {
-    // Private fields to store account information
-    private String accountNumber;
-    private String accountHolderName;
-    private double balance;
-
-    // Constructor to initialize the account
-    public BankAccount(String accountNumber, String accountHolderName, double initialBalance) {
-        this.accountNumber = accountNumber;
-        this.accountHolderName = accountHolderName;
-        this.balance = initialBalance;
-    }
-
-    // Getter method for account number
-    public String getAccountNumber() {
-        return accountNumber;
-    }
-
-    // Getter method for account holder name
-    public String getAccountHolderName() {
-        return accountHolderName;
-    }
-
-    // Getter method for balance
-    public double getBalance() {
-        return balance;
-    }
-
-    // Method to deposit money
-    public void deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-            System.out.println("Deposited: " + amount);
-        } else {
-            System.out.println("Invalid deposit amount");
+        Bank Account: Let's consider a real-world example of a bank account. We'll encapsulate the account balance and provide methods to interact with the balance.
+        public class BankAccount {
+            // Private fields to store account information
+            private String accountNumber;
+            private String accountHolderName;
+            private double balance;
+        
+            // Constructor to initialize the account
+            public BankAccount(String accountNumber, String accountHolderName, double initialBalance) {
+                this.accountNumber = accountNumber;
+                this.accountHolderName = accountHolderName;
+                this.balance = initialBalance;
+            }
+        
+            // Getter method for account number
+            public String getAccountNumber() {
+                return accountNumber;
+            }
+        
+            // Getter method for account holder name
+            public String getAccountHolderName() {
+                return accountHolderName;
+            }
+        
+            // Getter method for balance
+            public double getBalance() {
+                return balance;
+            }
+        
+            // Method to deposit money
+            public void deposit(double amount) {
+                if (amount > 0) {
+                    balance += amount;
+                    System.out.println("Deposited: " + amount);
+                } else {
+                    System.out.println("Invalid deposit amount");
+                }
+            }
+        
+            // Method to withdraw money
+            public void withdraw(double amount) {
+                if (amount > 0 && amount <= balance) {
+                    balance -= amount;
+                    System.out.println("Withdrawn: " + amount);
+                } else {
+                    System.out.println("Invalid withdrawal amount or insufficient balance");
+                }
+            }
         }
-    }
-
-    // Method to withdraw money
-    public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
-            System.out.println("Withdrawn: " + amount);
-        } else {
-            System.out.println("Invalid withdrawal amount or insufficient balance");
-        }
-    }
-}
 
 ------------
 // Main.java
