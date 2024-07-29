@@ -205,9 +205,11 @@ public class Main {
 
 
 ============================ 04. Polymorphism(Object to take many forms) ==============================
--allows objects of different classes to be treated as objects of a common superclass. 
+WHAT?
 -allows objects of different classes to be treated as objects of a common parent class, enabling a single interface to represent different underlying forms (data types)
--way to perform a single action in different forms, enabling flexibility and the ability to extend code with minimal changes.
+
+WHY?
+-ability to extend code with minimal changes.
 
 There are two primary types of polymorphism:
 1. Static/Compile-time Polymorphism (Overloading):
