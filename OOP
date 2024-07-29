@@ -17,9 +17,9 @@ E. 'this' keyword
 
 ================= 01. Data Abstraction (Data hide) =============================
 WHAT?
--breaking down a program into smaller pieces or modules. 
--focus on what the object does rather than how it does it.
 -hiding the internal implementation details, showing only the essential features of an object to a developer
+-focus on what the object does rather than how it does it.
+-breaking down a program into smaller pieces or modules. 
 
 WHY?
 The program is easier to develop, manage, test, and debug independently
