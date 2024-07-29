@@ -327,7 +327,7 @@ INTERFACE:--
     -All methods in an interface are implicitly public and abstract. 
     -Interfaces cannot have constructors or member variables (except static final constants).
     -Support multiple inheritance.
-    -It implements
+    -It implements NOT extends like class
 
         Example:
         interface youtubeChannel {
