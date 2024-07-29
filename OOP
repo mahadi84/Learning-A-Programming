@@ -208,11 +208,12 @@ public class Main {
 
 ============================ 04. Polymorphism(Object to take many forms) ==============================
 WHAT?
--allows objects of different classes to be treated as objects of a common parent class, enabling a single interface to represent different underlying forms (data types)
+    -allows objects of different (Dog, Cat) classes to be treated as objects of a common parent (Animal) class, 
+    -enabling a single interface to represent different underlying forms (data types)
 
 WHY?
--ability to extend code with minimal changes.
--code reusability.
+    -ability to extend code with minimal changes.
+    -code reusability.
 
 HOW?
 There are two primary types of polymorphism:
