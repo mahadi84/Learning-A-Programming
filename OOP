@@ -323,13 +323,21 @@ ABSTRACT CLASS:--
             }
 
 INTERFACE:--
-    -can only have abstract methods (until Java 8, which introduced default and static methods).
-    -All methods in an interface are implicitly public and abstract. 
-    -Interfaces cannot have constructors or member variables (except static final constants).
-    -Support multiple inheritance.
-    -It implements NOT extends like class
+    WHAT?
+        -can only have abstract methods (until Java 8, which introduced default and static methods).
+        -All methods in an interface are implicitly public and abstract. 
+        -Interfaces cannot have constructors or member variables (except static final constants).
+        -Support multiple inheritance.
+        -It implements NOT extends like class
 
-        Example:
+    WHY?
+        -Multiple Inheritance: Java does not support multiple inheritance with classes, but a class can implement multiple interfaces. 
+        -Polymorphism: allows you to define a contract that multiple classes can implement.
+        -Decoupling(দ্বিগুণ) my code: By programming to an interface rather than a concrete class, you can change the implementation without affecting the code that depends on the interface.
+        -API Design: When designing APIs, interfaces provide a way to define the expected behavior without dictating how it should be implemented. This allows different implementations to be swapped in and out as needed.
+        -Testing: Interfaces make it easier to create mock implementations for testing purposes.
+    
+    Example:
         interface youtubeChannel {
             // Abstract method            
             void makeVideo();
