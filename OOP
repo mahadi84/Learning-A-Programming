@@ -1,9 +1,9 @@
 Date: 28-July-2024
 
-
-01. Data Abstraction (Data hide) 
+    --WHAT AND WHY?--
+01. Data Abstraction (hiding data and complexity) 
 02. Inheritance(Code Reusability, Method Overriding, Extended Functionality )
-03. Encapsulation(hiding data and complexity)
+03. Encapsulation(bundling data and methods)
 04. Polymorphism(Object to take many forms)
 
 
