@@ -1,0 +1,72 @@
+
+# জাভাতে ব্যবহৃত সাধারণ ডেটা স্ট্রাকচার (Data Structures in Java)
+
+## ১. অ্যারে (Array)
+- বর্ণনা: ফিক্সড সাইজের ডেটা স্ট্রাকচার যেখানে একই টাইপের এলিমেন্টগুলো কন্টিগিউয়াস মেমোরি লোকেশনে সংরক্ষিত থাকে।
+- জাভা ইমপ্লিমেন্টেশন: 
+  int[] numbers = new int[5]; // 5 সাইজের ইন্টিজার অ্যারে
+  String[] names = {"Alice", "Bob", "Charlie"};
+  ```
+
+## ২. লিঙ্কড লিস্ট (Linked List)
+- বর্ণনা: ডাইনামিক ডেটা স্ট্রাকচার যেখানে নোডগুলো পয়েন্টারের মাধ্যমে সংযুক্ত থাকে। প্রতিটি নোডে ডেটা এবং পরবর্তী নোডের রেফারেন্স থাকে।
+- জাভা ইমপ্লিমেন্টেশন:
+  LinkedList<String> cities = new LinkedList<>();
+  cities.add("Dhaka");
+  cities.add("Chittagong");
+  cities.add("Khulna");
+  ```
+
+
+## ৩. ট্রি (Tree)
+- বর্ণনা: হায়ারার্কিক্যাল ডেটা স্ট্রাকচার যেখানে একটি রুট নোড থাকে এবং অন্যান্য নোডগুলো চাইল্ড হিসেবে সংযুক্ত থাকে।
+
+- রিয়েল-ওয়ার্ল্ড উদাহরণ:
+class TreeNode {
+    int value;
+    TreeNode left;
+    TreeNode right;
+    
+    TreeNode(int value) {
+        this.value = value;
+        left = right = null;
+    }
+}
+  - ফাইল সিস্টেমের স্ট্রাকচার (ফোল্ডার এবং সাবফোল্ডার)
+  TreeNode root = new TreeNode("C:");
+  root.left = new TreeNode("Program Files");
+  root.right = new TreeNode("Users");
+  root.left.left = new TreeNode("Java");
+  ```
+
+## ৪. গ্রাফ (Graph)
+- বর্ণনা: নোড (ভার্টেক্স) এবং এজের সমন্বয়ে গঠিত নন-লিনিয়ার ডেটা স্ট্রাকচার।
+
+- রিয়েল-ওয়ার্ল্ড উদাহরণ:
+  class Graph {
+      private int V; // ভার্টেক্স সংখ্যা
+      private LinkedList<Integer> adj[]; // অ্যাডজেসেন্সি লিস্ট      
+      Graph(int v) {
+          V = v;
+          adj = new LinkedList[v];
+          for (int i=0; i<v; ++i)
+              adj[i] = new LinkedList();
+      }      
+      void addEdge(int v, int w) {
+          adj[v].add(w);
+      }
+  }
+
+  - সোশ্যাল মিডিয়া নেটওয়ার্কে ব্যবহারকারীদের কানেকশন (ফ্রেন্ডশিপ গ্রাফ)
+  Graph socialNetwork = new Graph(5); // 5 জন ব্যবহারকারী
+  socialNetwork.addEdge(0, 1); // ব্যবহারকারী 0, ব্যবহারকারী 1 এর সাথে কানেক্টেড
+  socialNetwork.addEdge(1, 2);
+  socialNetwork.addEdge(2, 3);
+  socialNetwork.addEdge(3, 4);
+
+
+
+
+
+
+-
