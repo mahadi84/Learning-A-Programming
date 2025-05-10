@@ -1,0 +1,171 @@
+
+
+
+# অ্যালগরিদম (Common Algorithms)
+
+অ্যালগরিদম কম্পিউটারকে/সফটওয়্যার-কে দেয়া ধাপে ধাপে নির্দেশনা।
+  ভালো অ্যালগরিদম = দ্রুত কাজ শেষ করা
+  খারাপ অ্যালগরিদম = সময় ও শক্তি নষ্ট করা
+
+### অ্যালগরিদমের উদ্দেশ্য
+-সমস্যা সমাধান:  গুগল ম্যাপ- আপনার বাসা থেকে অফিসের সবচেয়ে কম দূরত্বের রাস্তাটি খুঁজে বের করে, কিভাবে বের করে ?   
+-সার্চ: যখন আপনি সুপারশপে জিনিস খুঁজেন, কিভাবে খুজেঁন?: এলোমেলোভাবে খুঁজলে সময় বেশি লাগে (লিনিয়ার সার্চ) | সেকশন অনুযায়ী খুঁজলে দ্রুত পাওয়া যায় (বাইনারি সার্চ)
+-মেমোরি ব্যবহার: যেমন আপনার রুমে জিনিসপত্র গুছিয়ে রাখলে বেশি জায়গা লাগে না. তেমনি ভালো অ্যালগরিদম কম জায়গায় বেশি কাজ করে।
+
+
+
+
+
+সর্টিং এবং সার্চিং অ্যালগরিদম ডেটা ম্যানিপুলেশনের জন্য অপরিহার্য, আর ডাইনামিক প্রোগ্রামিং কমপ্লেক্স প্রবলেমসের অপ্টিমাল সলিউশন বের করতে সাহায্য করে।
+ট্রি এবং গ্রাফ কমপ্লেক্স রিলেশনশিপ রিপ্রেজেন্টেশনের জন্য ব্যবহার করা হয়।
+
+
+
+## ১. সর্টিং অ্যালগরিদম (Sorting Algorithms)
+
+### ১.১ বাবল সর্ট (Bubble Sort)
+- বর্ণনা: সহজ সর্টিং অ্যালগরিদম যা প্রতিবেশী এলিমেন্টগুলো তুলনা করে এবং সোয়াপ করে।
+- জাভা ইমপ্লিমেন্টেশন:
+void bubbleSort(int[] arr) {
+    int n = arr.length;
+    for (int i = 0; i < n-1; i++)
+        for (int j = 0; j < n-i-1; j++)
+            if (arr[j] > arr[j+1]) {
+                // swap
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+}
+```
+- রিয়েল-ওয়ার্ল্ড উদাহরণ: 
+  - ছোট ডেটাসেটের জন্য যেমন মোবাইল কন্টাক্ট লিস্টে নাম অনুসারে সর্ট করা
+  int[] contactIds = {5, 2, 8, 1, 3};
+  bubbleSort(contactIds); // Results: {1, 2, 3, 5, 8}
+  ```
+
+### ১.২ কুইক সর্ট (Quick Sort)
+- বর্ণনা: ডিভাইড অ্যান্ড কনকয়ার পদ্ধতিতে কাজ করে, পিভট এলিমেন্ট ব্যবহার করে।
+- জাভা ইমপ্লিমেন্টেশন:
+void quickSort(int[] arr, int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi-1);
+        quickSort(arr, pi+1, high);
+    }
+}
+
+int partition(int[] arr, int low, int high) {
+    int pivot = arr[high];
+    int i = (low-1);
+    for (int j=low; j<high; j++) {
+        if (arr[j] < pivot) {
+            i++;
+            // swap
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+    // swap pivot
+    int temp = arr[i+1];
+    arr[i+1] = arr[high];
+    arr[high] = temp;
+    return i+1;
+}
+```
+- রিয়েল-ওয়ার্ল্ড উদাহরণ:
+  - বড় ডেটাসেট সর্টিং যেমন ই-কমার্স সাইটে পণ্য মূল্য অনুসারে সর্ট করা
+  int[] productPrices = {1200, 450, 899, 1500, 650};
+  quickSort(productPrices, 0, productPrices.length-1);
+  ```
+
+## ২. সার্চিং অ্যালগরিদম (Searching Algorithms)
+
+### ২.১ লিনিয়ার সার্চ (Linear Search)
+- বর্ণনা: প্রতিটি এলিমেন্টকে সিকুয়েনশিয়ালি চেক করে।
+- জাভা ইমপ্লিমেন্টেশন:
+int linearSearch(int[] arr, int x) {
+    for (int i = 0; i < arr.length; i++)
+        if (arr[i] == x)
+            return i;
+    return -1;
+}
+```
+- রিয়েল-ওয়ার্ল্ড উদাহরণ:
+  - ছোট লিস্টে আইটেম খোঁজা যেমন ইউজারের শপিং কার্টে নির্দিষ্ট পণ্য আছে কিনা চেক করা
+  int[] cartItems = {101, 205, 308, 412};
+  int position = linearSearch(cartItems, 308); // Returns 2
+  ```
+
+### ২.২ বাইনারি সার্চ (Binary Search)
+- বর্ণনা: সর্টেড অ্যারেতে দ্রুত সার্চ করার জন্য।
+- জাভা ইমপ্লিমেন্টেশন:
+int binarySearch(int[] arr, int x) {
+    int left = 0, right = arr.length - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == x)
+            return mid;
+        if (arr[mid] < x)
+            left = mid + 1;
+        else
+            right = mid - 1;
+    }
+    return -1;
+}
+```
+- রিয়েল-ওয়ার্ল্ড উদাহরণ:
+  - ডিকশনারি অ্যাপ্লিকেশনে শব্দ খোঁজা
+  String[] dictionary = {"apple", "banana", "grape", "mango", "orange"};
+  Arrays.sort(dictionary);
+  int index = Arrays.binarySearch(dictionary, "mango"); // Returns 3
+  ```
+
+## ৩. ডাইনামিক প্রোগ্রামিং (Dynamic Programming)
+
+### ৩.১ ফিবোনাচি সিকোয়েন্স (Fibonacci Sequence)
+- বর্ণনা: মেমোইজেশন ব্যবহার করে রিকার্সিভ কল কমিয়ে দেয়।
+- জাভা ইমপ্লিমেন্টেশন:
+int fibonacci(int n) {
+    int[] dp = new int[n+2];
+    dp[0] = 0;
+    dp[1] = 1;
+    
+    for (int i = 2; i <= n; i++)
+        dp[i] = dp[i-1] + dp[i-2];
+        
+    return dp[n];
+}
+```
+- রিয়েল-ওয়ার্ল্ড উদাহরণ:
+  - স্টক মার্কেট অ্যানালাইসিসে ট্রেন্ড প্যাটার্ন রিকগনিশন
+  System.out.println(fibonacci(10)); // Output: 55
+  ```
+
+### ৩.২ ন্যাপস্যাক প্রবলেম (0/1 Knapsack Problem)
+- বর্ণনা: সীমিত ক্যাপাসিটিতে সর্বোচ্চ ভ্যালু নির্বাচন।
+- জাভা ইমপ্লিমেন্টেশন:
+int knapsack(int W, int[] wt, int[] val, int n) {
+    int[][] dp = new int[n+1][W+1];
+    
+    for (int i = 0; i <= n; i++) {
+        for (int w = 0; w <= W; w++) {
+            if (i==0 || w==0)
+                dp[i][w] = 0;
+            else if (wt[i-1] <= w)
+                dp[i][w] = Math.max(val[i-1] + dp[i-1][w-wt[i-1]], dp[i-1][w]);
+            else
+                dp[i][w] = dp[i-1][w];
+        }
+    }
+    return dp[n][W];
+}
+```
+- রিয়েল-ওয়ার্ল্ড উদাহরণ:
+  - ই-কমার্স ওয়্যারহাউজে ট্রাক লোড অপ্টিমাইজেশন
+  int[] values = {60, 100, 120};
+  int[] weights = {10, 20, 30};
+  int capacity = 50;
+  System.out.println(knapsack(capacity, weights, values, values.length)); // Output: 220
+  ```
