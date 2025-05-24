@@ -53,8 +53,8 @@ IPEA(Not IDEA) in Brief
                  
 ৪.  Abstraction(ATM/PI): এর মূল উদ্দেশ্য হলো- Hide Complexitiy, ভেতরের জটিলতা লুকানো । শুধুমাত্র প্রয়োজনীয় তথ্য দেখানো ।
                   -এবস্ট্রাক্ট ক্লাস (Abstract Class) এবং ইন্টারফেস (Interface) উভয়ই অ্যাবস্ট্রাকশন (Abstraction) অর্জনের জন্য ব্যবহৃত হয় |
-                  উদাহরণস্বরূপ: এটিএম কীভাবে আপনার অ্যাকাউন্ট থেকে টাকা বের করে, সেটা কিন্তু আপনি দেখেন না বা জানার দরকারও নেই। 
-                               Data/Hide Access: Customer(Limited Access), Teller(most of access), Admin(All access)
+                  উদাহরণস্বরূপ: -Data/Hide Access: Customer(Limited Access), Teller(most of access), Admin(All access)
+                              -এটিএম কীভাবে আপনার অ্যাকাউন্ট থেকে টাকা বের করে, সেটা কিন্তু আপনি দেখেন না বা জানার দরকারও নেই। 
 
 
 ===================================================================================================
