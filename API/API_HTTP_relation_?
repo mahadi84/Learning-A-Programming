@@ -1,7 +1,15 @@
 
 # HTTP ও API-এর মধ্যে সম্পর্ক (বাংলায়)  
 
-HTTP (HyperText Transfer Protocol) এবং API (Application Programming Interface) পরস্পর সম্পর্কিত কিন্তু আলাদা ধারণা। এদের সম্পর্ক নিচে সহজভাবে বোঝানো হলো:  
+
+
+✅ HTTP = রাস্তা (যোগাযোগের মাধ্যম)  
+✅ API = গাড়ি (ডাটা আদান-প্রদানের সিস্টেম)  
+
+
+
+HTTP (HyperText Transfer Protocol) এবং API (Application Programming Interface) পরস্পর সম্পর্কিত কিন্তু আলাদা ধারণা।
+এদের সম্পর্ক নিচে সহজভাবে বোঝানো হলো:  
 
 ---
 
